@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 
 using namespace std;
 
@@ -14,48 +14,52 @@ class Car
 public:
 	void Moove()
 	{
-		
-		while (lvl_Now != lvl_Min);
+		for (lvl_Now = lvl_Now; lvl_Now > lvl_Min; lvl_Now-expend)
 		{
 			lvl_Now = lvl_Now - expend;
 			time++;
-			if (lvl_Now = lvl_Min)
-			{
-				cout << "Òîïëèâî êîí÷èëîñü" << endl;
-			}
-			cout << "Âðåìÿ äâèæåíèÿ: " << time<<" ñåêóíä." << endl;
-			cout << "Óðîâåíü òîïëèâà: " << lvl_Now<<" ëèòðîâ." << endl;
-			
+			cout << "Ð’Ñ€ÐµÐ¼Ñ Ð´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ñ: " << time << " ÑÐµÐºÑƒÐ½Ð´." << endl;
+			cout << "Ð£Ñ€Ð¾Ð²ÐµÐ½ÑŒ Ñ‚Ð¾Ð¿Ð»Ð¸Ð²Ð°: " << lvl_Now << " Ð»Ð¸Ñ‚Ñ€Ð¾Ð²." << endl;
 		}
+		/*if (lvl_Now >= lvl_Min)
+			bool drive = true;
 		
+		do
+		{
+			lvl_Now = lvl_Now - expend;
+			time++;
+			cout << "Ð’Ñ€ÐµÐ¼Ñ Ð´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ñ: " << time << " ÑÐµÐºÑƒÐ½Ð´." << endl;
+			cout << "Ð£Ñ€Ð¾Ð²ÐµÐ½ÑŒ Ñ‚Ð¾Ð¿Ð»Ð¸Ð²Ð°: " << lvl_Now << " Ð»Ð¸Ñ‚Ñ€Ð¾Ð²." << endl;
+
+		} while (true);*/
 	}
 	void refill()
 	{
 		int choice;
-		cout << "Óðîâåíü òîïëèâà â àâòîìîáèëå: " << lvl_Defoult << endl;
-		cout << "Õîòèòå çàïðàâèòüñÿ:\n 1 - Õî÷ó!\n2 - Ñåãîäíÿ ýêîíîìèì(" << endl;
+		cout << "Ð£Ñ€Ð¾Ð²ÐµÐ½ÑŒ Ñ‚Ð¾Ð¿Ð»Ð¸Ð²Ð° Ð² Ð°Ð²Ñ‚Ð¾Ð¼Ð¾Ð±Ð¸Ð»Ðµ: " << lvl_Defoult << endl;
+		cout << "Ð¥Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð·Ð°Ð¿Ñ€Ð°Ð²Ð¸Ñ‚ÑŒÑÑ:\n 1 - Ð¥Ð¾Ñ‡Ñƒ\n2 - ÐÐµ Ñ…Ð¾Ñ‡Ñƒ" << endl;
 		cin >> choice;
 		switch (choice)
 		{
 		case 1:
-			cout << "Ââåäèòå êîë-âî ëèòðîâ òîïëèâà: " << endl;
+			cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»-Ð²Ð¾ Ð»Ð¸Ñ‚Ñ€Ð¾Ð² Ñ‚Ð¾Ð¿Ð»Ð¸Ð²Ð°: " << endl;
 			cin >> lvl_plus;
 			lvl_Now = lvl_Defoult + lvl_plus;
 			if (lvl_Now <= lvl_Max)
 			{
-				cout << "Óñïåøíî çàïðàâëåíî " << lvl_plus << " ëèòðîâ òîïëèâà!" << endl;
+				cout << "Ð£ÑÐ¿ÐµÑˆÐ½Ð¾ Ð·Ð°Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¾ " << lvl_plus << " Ð»Ð¸Ñ‚Ñ€Ð¾Ð² Ñ‚Ð¾Ð¿Ð»Ð¸Ð²Ð°!" << endl;
 			}else
 			{
-				cout << "Áàê ïåðåïîëíåí!" << endl;
+				cout << "Ð‘Ð°Ðº Ð¿ÐµÑ€ÐµÐ¿Ð¾Ð»Ð½ÐµÐ½!" << endl;
 				lvl_Now = lvl_Max;
 			}
 			break;
 		case 2:
-			cout << "Ñ÷àñòëèâîãî ïóòè!" << endl;
+			cout << "Ð¡Ñ‡Ð°ÑÑ‚Ð»Ð¸Ð²Ð¾Ð³Ð¾ Ð¿ÑƒÑ‚Ð¸!" << endl;
 			lvl_Now = lvl_Defoult;
 			break;
 		default:
-			cout << "Îøèáêà! Ââåäåíû íåêîððåêòíûå äàííûå!" << endl;
+			cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! Ð’Ð²ÐµÐ´ÐµÐ½Ñ‹ Ð½ÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ!" << endl;
 			break;
 		}
 
