@@ -12,27 +12,6 @@ class Car
 	double time = 0;
 	double expend = 0.0003;
 public:
-	void Moove()
-	{
-		for (lvl_Now = lvl_Now; lvl_Now > lvl_Min; lvl_Now-expend)
-		{
-			lvl_Now = lvl_Now - expend;
-			time++;
-			cout << "Время движения: " << time << " секунд." << endl;
-			cout << "Уровень топлива: " << lvl_Now << " литров." << endl;
-		}
-		/*if (lvl_Now >= lvl_Min)
-			bool drive = true;
-		
-		do
-		{
-			lvl_Now = lvl_Now - expend;
-			time++;
-			cout << "Время движения: " << time << " секунд." << endl;
-			cout << "Уровень топлива: " << lvl_Now << " литров." << endl;
-
-		} while (true);*/
-	}
 	void refill()
 	{
 		int choice;
@@ -64,6 +43,37 @@ public:
 		}
 
 	}
+	void Drive()
+	{
+		bool drive;
+		char choice;
+		cout << "Нажмите 'W' для двидения" << endl;
+		cout << "Нажмите 'S' для торможения" << endl;
+		cin >> choice;
+		if (choice = 'W')
+		{
+			Engine();
+			if (choice = 'S')
+			{
+				return;
+			}
+		}
+
+		
+	}
+private:
+	void Engine()
+	{
+		for (lvl_Now = lvl_Now; lvl_Now > lvl_Min; lvl_Now-expend)
+		{
+			lvl_Now = lvl_Now - expend;
+			time++;
+			cout << "Время движения: " << time << " секунд." << endl;
+			cout << "Уровень топлива: " << lvl_Now << " литров." << endl;
+			system("cls");
+		}
+		
+	}
 };
 
 
@@ -72,6 +82,6 @@ int main()
 	setlocale(LC_ALL, "ru");
 	Car car;
 	car.refill();
-	car.Moove();
+	car.Drive();
 	
 }
