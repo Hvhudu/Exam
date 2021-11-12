@@ -63,7 +63,6 @@ public:
 			break;
 		case 2:
 			cout << "Вы стоите на месте" << endl;
-			return;
 			break;
 		default:
 			cerr << "Error!" << endl;
